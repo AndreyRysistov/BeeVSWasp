@@ -1,7 +1,7 @@
 {
   "glob":
   {
-    "image_size": [128, 128],
+    "image_size": [64, 64],
     "image_channels": 3,
     "batch_size": 32,
     "nclasses": 2
