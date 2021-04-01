@@ -43,6 +43,7 @@ class ConvModel:
         ]
         self.weights = []
         for i in range(len(self.shapes)):
+            print(self.shapes[i])
             self.weights.append(get_tfVariable(self.shapes[i], 'weight{}'.format(i)))
 
         self.bias = []
