@@ -6,13 +6,18 @@ from utils.args import get_args
 
 
 if __name__ == "__main__":
+    args = get_args()  # parse args
+    config, _ = get_config_from_json(args.config)  # load config
     try:
-        args = get_args()
-        config, _ = get_config_from_json(args.config)
-    except Exception as err:
-        print("missing or invalid arguments")
+        args = get_args() #parse args
+        config, _ = get_config_from_json(args.config) #load config
+    except FileNotFoundError:
+        print("File {} don't exists".format(args.config))
         exit(0)
-    dataloader = DataLoader('datasets/data', config)
+    except Exception:
+        print(("Missing or invalid arguments"))
+        exit(0)
+    dataloader = DataLoader('datasets/data', config) #create data_loader
     train_data, valid_data = dataloader.create_datasets()
     model = ConvModel(config)
     trainer = ConvModelTrainer(config, model)

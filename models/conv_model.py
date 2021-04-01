@@ -48,6 +48,7 @@ class ConvModel:
         for i in range(len(self.shapes)):
             self.bias.append(get_tfVariable([1, self.shapes[i][-1]], 'bias{}'.format(i)))
 
+    #forvard
     def run(self, x_input):
         conv1 = conv_layer(x_input, self.weights[0], self.bias[0])
         pool1 = maxPool_layer(conv1, poolSize=self.pool_size)

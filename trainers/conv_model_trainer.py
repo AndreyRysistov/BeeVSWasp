@@ -33,7 +33,6 @@ class ConvModelTrainer:
                 y_train_pred = np.vstack(y_train_preds)
                 ConvModelTrainer.show_progress(i, train.labels, y_train_pred, valid.labels, y_val_pred)
 
-
     @staticmethod
     def show_progress(epoch, train_true, train_pred, valid_true, valid_pred):
         train_acc = ConvModelTrainer.accuracy(train_pred, train_true)
