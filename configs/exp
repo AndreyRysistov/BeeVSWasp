@@ -17,7 +17,7 @@
     "filter_size": 3,
     "dropout": 0.5,
     "shapes": {
-      "conv1": 128,
+      "conv1": 32,
       "conv2": 64,
       "fc1": 512,
       "fc2": 256,

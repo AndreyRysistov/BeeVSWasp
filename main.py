@@ -4,6 +4,7 @@ from trainers.conv_model_trainer import ConvModelTrainer
 from utils.config import get_config_from_json
 from utils.args import get_args
 
+
 if __name__ == "__main__":
     try:
         args = get_args()
