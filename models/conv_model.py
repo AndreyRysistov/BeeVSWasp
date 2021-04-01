@@ -9,7 +9,6 @@ class ConvModel:
         self.dropout = self.config.model.dropout
         self.nclasses = self.config.glob.nclasses
         n = int((self.config.glob.image_size[0] / (self.pool_size * 2))**2)
-        print(n)
         self.shapes = [
             # 1 conv layer
             [
@@ -43,7 +42,6 @@ class ConvModel:
         ]
         self.weights = []
         for i in range(len(self.shapes)):
-            print(self.shapes[i])
             self.weights.append(get_tfVariable(self.shapes[i], 'weight{}'.format(i)))
 
         self.bias = []
